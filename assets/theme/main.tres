@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cjvsr7oimh8ti"]
+
+[ext_resource type="FontFile" uid="uid://cbl4eaj7j5jkr" path="res://assets/fonts/MPLUS1p-Black.ttf" id="1_mukdh"]
+[ext_resource type="StyleBox" uid="uid://chd172yq7hnhm" path="res://assets/theme/button.tres" id="1_oxjdy"]
+[ext_resource type="StyleBox" uid="uid://df5oevogqfh34" path="res://assets/theme/panel_container.tres" id="2_eci4f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ax1g2"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.533333, 0.756863, 0.298039, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7iy5"]
+
+[resource]
+Button/fonts/font = ExtResource("1_mukdh")
+Button/styles/focus = SubResource("StyleBoxFlat_ax1g2")
+Button/styles/normal = ExtResource("1_oxjdy")
+Label/font_sizes/font_size = 50
+Label/fonts/font = ExtResource("1_mukdh")
+Label/styles/normal = SubResource("StyleBoxEmpty_x7iy5")
+PanelContainer/styles/panel = ExtResource("2_eci4f")
+VBoxContainer/constants/separation = 20

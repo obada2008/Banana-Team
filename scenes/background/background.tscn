@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccqg6f1fnaeh4"]
+
+[ext_resource type="Texture2D" uid="uid://cmkrawcufo61" path="res://assets/Background/main bg.png" id="2_pesyb"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="MainBg" type="Sprite2D" parent="."]
+position = Vector2(626, 365)
+texture = ExtResource("2_pesyb")

@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://behyuwy4rq2q8"]
+
+[ext_resource type="Texture2D" uid="uid://dsb4kj55xs04m" path="res://assets/Traps/Saw/On (38x38).png" id="1_m72dw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gerdn"]
+atlas = ExtResource("1_m72dw")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug1yj"]
+atlas = ExtResource("1_m72dw")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7qg8"]
+atlas = ExtResource("1_m72dw")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol34m"]
+atlas = ExtResource("1_m72dw")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shywn"]
+atlas = ExtResource("1_m72dw")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6xuu"]
+atlas = ExtResource("1_m72dw")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyrht"]
+atlas = ExtResource("1_m72dw")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kiuj"]
+atlas = ExtResource("1_m72dw")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6l3p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gerdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug1yj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7qg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol34m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shywn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6xuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyrht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kiuj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0g7rn"]
+radius = 16.0
+
+[node name="Saw" type="Area2D"]
+z_index = -1
+collision_layer = 4
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l6l3p")
+autoplay = "default"
+frame = 4
+frame_progress = 0.671803
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0g7rn")

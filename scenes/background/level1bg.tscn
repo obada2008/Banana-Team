@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbnetx8m4o576"]
+
+[ext_resource type="Texture2D" uid="uid://defq0pxvii5pv" path="res://assets/Background/level 1.bg.png" id="1_36fe3"]
+
+[node name="Level1Bg" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(642, 362)
+texture = ExtResource("1_36fe3")

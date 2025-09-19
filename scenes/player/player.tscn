@@ -1,0 +1,229 @@
+[gd_scene load_steps=23 format=3 uid="uid://bciwry2w0etse"]
+
+[ext_resource type="Script" uid="uid://dawdsbiv6mxyl" path="res://scenes/player/player.gd" id="1_ntu77"]
+[ext_resource type="Texture2D" uid="uid://nqloduuqwv74" path="res://assets/Main Characters/Monky/Idle m.png" id="2_h17s1"]
+[ext_resource type="Texture2D" uid="uid://drqasqd5rq5ua" path="res://assets/Main Characters/Monky/Double Jump Right.png" id="3_fm80t"]
+[ext_resource type="Texture2D" uid="uid://cabr2f727oygp" path="res://assets/Main Characters/Monky/Double Jump Down.png" id="4_gx1jg"]
+[ext_resource type="Texture2D" uid="uid://ynnx14ordehd" path="res://assets/Main Characters/Monky/Double Jump left.png" id="5_ugbui"]
+[ext_resource type="Texture2D" uid="uid://dlbhej4aslkhc" path="res://assets/Main Characters/Monky/Fall.png" id="6_je7p5"]
+[ext_resource type="Texture2D" uid="uid://bjloo2rxqaebi" path="res://assets/Main Characters/Monky/hit.png" id="8_fm80t"]
+[ext_resource type="Texture2D" uid="uid://cya4mdcelstdh" path="res://assets/Main Characters/Monky/Jump.png" id="8_je7p5"]
+[ext_resource type="Texture2D" uid="uid://du7o0jr6xx2c5" path="res://assets/Items/Health.png" id="9_5gtgg"]
+[ext_resource type="Texture2D" uid="uid://b1ijfnqu5wyy6" path="res://assets/Main Characters/Monky/run.png" id="9_je7p5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h17s1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87t2i"]
+atlas = SubResource("CompressedTexture2D_h17s1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5ihm"]
+atlas = SubResource("CompressedTexture2D_h17s1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_je7p5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_245ts"]
+atlas = SubResource("CompressedTexture2D_je7p5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcc0v"]
+atlas = SubResource("CompressedTexture2D_je7p5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il4kh"]
+atlas = SubResource("CompressedTexture2D_je7p5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hfom"]
+atlas = SubResource("CompressedTexture2D_je7p5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8tfi"]
+atlas = SubResource("CompressedTexture2D_je7p5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuao7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fm80t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fm80t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gx1jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gx1jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ugbui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fm80t")
+}],
+"loop": true,
+"name": &"double_jump",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_je7p5")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87t2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5ihm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fm80t")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h17s1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_je7p5")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_je7p5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_245ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcc0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il4kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hfom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8tfi")
+}],
+"loop": true,
+"name": &"wall_jump",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbvl3"]
+size = Vector2(18, 22)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5c71l"]
+radius = 11.0
+height = 28.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+light_mask = 2
+z_index = 10
+collision_layer = 16
+collision_mask = 41
+script = ExtResource("1_ntu77")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.101333, 0.10961)
+sprite_frames = SubResource("SpriteFrames_iuao7")
+animation = &"hurt"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_wbvl3")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_5c71l")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="JumpBufferTimer" type="Timer" parent="Timers"]
+wait_time = 0.25
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="Timers"]
+wait_time = 0.15
+one_shot = true
+
+[node name="DashTimer" type="Timer" parent="Timers"]
+wait_time = 0.1
+
+[node name="DashCooldownTimer" type="Timer" parent="Timers"]
+wait_time = 1.5
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="HEALTH" type="Sprite2D" parent="HUD"]
+position = Vector2(275, 74)
+scale = Vector2(2.58929, 2.73214)
+texture = ExtResource("9_5gtgg")
+vframes = 4
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="timeout" from="Timers/DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Timers/DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]

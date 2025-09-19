@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=4 uid="uid://cvhgjkhyydd7r"]
+
+[ext_resource type="Script" uid="uid://b8tr5mu8gyf6j" path="res://scenes/main/main.gd" id="1_b1x3f"]
+[ext_resource type="PackedScene" uid="uid://ccqg6f1fnaeh4" path="res://scenes/background/background.tscn" id="2_a8run"]
+[ext_resource type="TileSet" uid="uid://cnf2eqdbulls0" path="res://assets/tilemap/level.tres" id="4_blune"]
+[ext_resource type="Texture2D" uid="uid://nqloduuqwv74" path="res://assets/Main Characters/Monky/Idle m.png" id="5_th5th"]
+[ext_resource type="Texture2D" uid="uid://dlbhej4aslkhc" path="res://assets/Main Characters/Monky/Fall.png" id="6_7smn1"]
+[ext_resource type="PackedScene" uid="uid://cl8m31oy38ywu" path="res://scenes/spikes/spikes.tscn" id="7_raeie"]
+[ext_resource type="Theme" uid="uid://cjvsr7oimh8ti" path="res://assets/theme/main.tres" id="8_hxu8e"]
+[ext_resource type="Script" uid="uid://caamg2hfi2ows" path="res://scenes/main/button.gd" id="9_nvumn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wxae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_th5th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_th5th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_th5th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7smn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7smn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7smn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7smn1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_b1x3f")
+
+[node name="Background" parent="." instance=ExtResource("2_a8run")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAOn/AAABAAUAAAAAAOr/AAADAAQAAAAAAOv/AAACAAUAAAAAAOz/AAACAAUAAAAAAO3/AAACAAUAAAAAAO7/AAACAAUAAAAAAO//AAACAAUAAAAAAPD/AAACAAUAAAAAAPH/AAACAAUAAAAAAPL/AAACAAUAAAAAAPP/AAACAAUAAAAAAPT/AAACAAUAAAAAAPX/AAACAAUAAAAAAPb/AAACAAUAAAAAAPf/AAACAAUAAAAAAPj/AAACAAUAAAAAAPn/AAACAAUAAAAAAPr/AAACAAUAAAAAAPv/AAACAAUAAAAAAPz/AAACAAUAAAAAAP3/AAACAAUAAAAAAP7/AAACAAUAAAAAAP//AAADAAUAAAAnAOn/AAABAAUAAAAnAOr/AAAEAAQAAAAnAOv/AAAAAAUAAAAnAOz/AAAAAAUAAAAnAO3/AAAAAAUAAAAnAO7/AAAAAAUAAAAnAO//AAAAAAUAAAAnAPD/AAAAAAUAAAAnAPH/AAAAAAUAAAAnAPL/AAAAAAUAAAAnAPP/AAAAAAUAAAAnAPT/AAAAAAUAAAAnAPX/AAAAAAUAAAAnAPb/AAAAAAUAAAAnAPf/AAAAAAUAAAAnAPj/AAAAAAUAAAAnAPn/AAAAAAUAAAAnAPr/AAAAAAUAAAAnAPv/AAAAAAUAAAAnAPz/AAAAAAUAAAAnAP3/AAAAAAUAAAAnAP7/AAAAAAUAAAAnAP//AAAEAAUAAAABAP//AAABAAQAAAACAP//AAABAAQAAAADAP//AAABAAQAAAAEAP//AAABAAQAAAAFAP//AAABAAQAAAAGAP//AAABAAQAAAAHAP//AAABAAQAAAAIAP//AAABAAQAAAAJAP//AAABAAQAAAAKAP//AAABAAQAAAALAP//AAABAAQAAAAMAP//AAABAAQAAAANAP//AAABAAQAAAAOAP//AAABAAQAAAAPAP//AAABAAQAAAAQAP//AAABAAQAAAARAP//AAABAAQAAAASAP//AAABAAQAAAATAP//AAABAAQAAAAUAP//AAABAAQAAAAVAP//AAABAAQAAAAWAP//AAABAAQAAAAXAP//AAABAAQAAAAYAP//AAABAAQAAAAZAP//AAABAAQAAAAaAP//AAABAAQAAAAbAP//AAABAAQAAAAcAP//AAABAAQAAAAdAP//AAABAAQAAAAeAP//AAABAAQAAAAfAP//AAABAAQAAAAgAP//AAABAAQAAAAhAP//AAABAAQAAAAiAP//AAABAAQAAAAjAP//AAABAAQAAAAkAP//AAABAAQAAAAlAP//AAABAAQAAAAmAP//AAABAAQAAAABAOr/AAABAAYAAAACAOr/AAABAAYAAAADAOr/AAABAAYAAAAEAOr/AAABAAYAAAAFAOr/AAABAAYAAAAGAOr/AAABAAYAAAAHAOr/AAABAAYAAAAIAOr/AAABAAYAAAAJAOr/AAABAAYAAAAKAOr/AAABAAYAAAALAOr/AAABAAYAAAAMAOr/AAABAAYAAAANAOr/AAABAAYAAAAOAOr/AAABAAYAAAAPAOr/AAABAAYAAAAQAOr/AAABAAYAAAARAOr/AAABAAYAAAASAOr/AAABAAYAAAATAOr/AAABAAYAAAAUAOr/AAABAAYAAAAVAOr/AAABAAYAAAAWAOr/AAABAAYAAAAXAOr/AAABAAYAAAAYAOr/AAABAAYAAAAZAOr/AAABAAYAAAAaAOr/AAABAAYAAAAbAOr/AAABAAYAAAAcAOr/AAABAAYAAAAdAOr/AAABAAYAAAAeAOr/AAABAAYAAAAfAOr/AAABAAYAAAAgAOr/AAABAAYAAAAhAOr/AAABAAYAAAAiAOr/AAABAAYAAAAjAOr/AAABAAYAAAAkAOr/AAABAAYAAAAlAOr/AAABAAYAAAAmAOr/AAABAAYAAAABAOn/AAABAAUAAAACAOn/AAABAAUAAAADAOn/AAABAAUAAAAEAOn/AAABAAUAAAAFAOn/AAABAAUAAAAGAOn/AAABAAUAAAAHAOn/AAABAAUAAAAIAOn/AAABAAUAAAAJAOn/AAABAAUAAAAKAOn/AAABAAUAAAALAOn/AAABAAUAAAAMAOn/AAABAAUAAAANAOn/AAABAAUAAAAOAOn/AAABAAUAAAAPAOn/AAABAAUAAAAQAOn/AAABAAUAAAARAOn/AAABAAUAAAASAOn/AAABAAUAAAATAOn/AAABAAUAAAAUAOn/AAABAAUAAAAVAOn/AAABAAUAAAAWAOn/AAABAAUAAAAXAOn/AAABAAUAAAAYAOn/AAABAAUAAAAZAOn/AAABAAUAAAAaAOn/AAABAAUAAAAbAOn/AAABAAUAAAAcAOn/AAABAAUAAAAdAOn/AAABAAUAAAAeAOn/AAABAAUAAAAfAOn/AAABAAUAAAAgAOn/AAABAAUAAAAhAOn/AAABAAUAAAAiAOn/AAABAAUAAAAjAOn/AAABAAUAAAAkAOn/AAABAAUAAAAlAOn/AAABAAUAAAAmAOn/AAABAAUAAAAmAP7/AAAIAAIAAAAmAP3/AAAIAAEAAAAmAPz/AAAIAAEAAAAlAP7/AAAHAAIAAAAlAP3/AAAHAAEAAAAlAPz/AAAHAAEAAAAkAP7/AAAHAAIAAAAkAP3/AAAHAAEAAAAkAPz/AAAHAAEAAAAjAP7/AAAHAAIAAAAjAP3/AAAHAAEAAAAjAPz/AAAHAAEAAAAiAP7/AAAHAAIAAAAiAP3/AAAHAAEAAAAiAPz/AAAHAAEAAAAhAP7/AAAHAAIAAAAhAP3/AAAHAAEAAAAhAPz/AAAHAAEAAAAgAP7/AAAHAAIAAAAgAP3/AAAHAAEAAAAgAPz/AAAHAAEAAAAfAP7/AAAHAAIAAAAfAP3/AAAHAAEAAAAfAPz/AAAHAAEAAAAeAP7/AAAHAAIAAAAeAP3/AAAHAAEAAAAeAPz/AAAHAAEAAAAdAP7/AAAHAAIAAAAdAP3/AAAHAAEAAAAdAPz/AAAHAAEAAAAcAP7/AAAHAAIAAAAcAP3/AAAHAAEAAAAcAPz/AAAHAAEAAAAbAP7/AAAHAAIAAAAbAP3/AAAHAAEAAAAbAPz/AAAHAAEAAAAaAP7/AAAHAAIAAAAaAP3/AAAHAAEAAAAaAPz/AAAHAAEAAAAZAP7/AAAHAAIAAAAZAP3/AAAHAAEAAAAZAPz/AAAHAAEAAAAYAP7/AAAHAAIAAAAYAP3/AAAHAAEAAAAYAPz/AAAHAAEAAAAXAP7/AAAHAAIAAAAXAP3/AAAHAAEAAAAXAPz/AAAHAAEAAAAWAP7/AAAHAAIAAAAWAP3/AAAHAAEAAAAWAPz/AAAHAAEAAAAVAP7/AAAHAAIAAAAVAP3/AAAHAAEAAAAVAPz/AAAHAAEAAAAUAP7/AAAHAAIAAAAUAP3/AAAHAAEAAAAUAPz/AAAHAAEAAAATAP7/AAAHAAIAAAATAP3/AAAHAAEAAAATAPz/AAAHAAEAAAASAP7/AAAHAAIAAAASAP3/AAAHAAEAAAASAPz/AAAHAAEAAAARAP7/AAAHAAIAAAARAP3/AAAHAAEAAAARAPz/AAAHAAEAAAAQAP7/AAAHAAIAAAAQAP3/AAAHAAEAAAAQAPz/AAAHAAEAAAAPAP7/AAAHAAIAAAAPAP3/AAAHAAEAAAAPAPz/AAAHAAEAAAAOAP7/AAAHAAIAAAAOAP3/AAAHAAEAAAAOAPz/AAAHAAEAAAANAP7/AAAHAAIAAAANAP3/AAAHAAEAAAANAPz/AAAHAAEAAAAMAP7/AAAHAAIAAAAMAP3/AAAHAAEAAAAMAPz/AAAHAAEAAAALAP7/AAAHAAIAAAALAP3/AAAHAAEAAAALAPz/AAAHAAEAAAAKAP7/AAAHAAIAAAAKAP3/AAAHAAEAAAAKAPz/AAAHAAEAAAAJAP7/AAAHAAIAAAAJAP3/AAAHAAEAAAAJAPz/AAAHAAEAAAAIAP7/AAAHAAIAAAAIAP3/AAAHAAEAAAAIAPz/AAAHAAEAAAAHAP7/AAAHAAIAAAAHAP3/AAAHAAEAAAAHAPz/AAAHAAEAAAAGAP7/AAAHAAIAAAAGAP3/AAAHAAEAAAAGAPz/AAAHAAEAAAAFAP7/AAAHAAIAAAAFAP3/AAAHAAEAAAAFAPz/AAAHAAEAAAAEAP7/AAAHAAIAAAAEAP3/AAAHAAEAAAAEAPz/AAAHAAEAAAADAP7/AAAHAAIAAAADAP3/AAAHAAEAAAADAPz/AAAHAAEAAAACAP7/AAAHAAIAAAACAP3/AAAHAAEAAAACAPz/AAAHAAEAAAABAP7/AAAGAAIAAAABAP3/AAAGAAEAAAABAPz/AAAGAAEAAAABAPv/AAAGAAAAAAACAPv/AAAHAAAAAAADAPv/AAAHAAAAAAAEAPv/AAAHAAAAAAAFAPv/AAAHAAAAAAAGAPv/AAAHAAAAAAAHAPv/AAAHAAAAAAAIAPv/AAAHAAAAAAAJAPv/AAAHAAAAAAAKAPv/AAAHAAAAAAALAPv/AAAHAAAAAAAMAPv/AAAHAAAAAAANAPv/AAAHAAAAAAAOAPv/AAAHAAAAAAAPAPv/AAAHAAAAAAAQAPv/AAAHAAAAAAARAPv/AAAHAAAAAAASAPv/AAAHAAAAAAATAPv/AAAHAAAAAAAUAPv/AAAHAAAAAAAVAPv/AAAHAAAAAAAWAPv/AAAHAAAAAAAXAPv/AAAHAAAAAAAYAPv/AAAHAAAAAAAZAPv/AAAHAAAAAAAaAPv/AAAHAAAAAAAbAPv/AAAHAAAAAAAcAPv/AAAHAAAAAAAdAPv/AAAHAAAAAAAeAPv/AAAHAAAAAAAfAPv/AAAHAAAAAAAgAPv/AAAHAAAAAAAhAPv/AAAHAAAAAAAiAPv/AAAHAAAAAAAjAPv/AAAHAAAAAAAkAPv/AAAHAAAAAAAlAPv/AAAHAAAAAAAmAPv/AAAIAAAAAAA=")
+tile_set = ExtResource("4_blune")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, -180)
+zoom = Vector2(2, 2)
+
+[node name="Player" type="AnimatedSprite2D" parent="."]
+position = Vector2(247, -269)
+scale = Vector2(0.09, 0.09)
+sprite_frames = SubResource("SpriteFrames_8wxae")
+autoplay = "default"
+
+[node name="Spikes" parent="." instance=ExtResource("7_raeie")]
+position = Vector2(387, -256)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 568.0
+offset_top = 275.0
+offset_right = 868.0
+offset_bottom = 616.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 209.0
+offset_right = -2.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("8_hxu8e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Banana Frenzy"
+horizontal_alignment = 1
+
+[node name="BestScoreLabel" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Best Score: 99999"
+horizontal_alignment = 1
+
+[node name="NewGameButton" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New Game"
+
+[node name="Help" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Help"
+script = ExtResource("9_nvumn")
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer/Help" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer/Help" to="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer/Help" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://ld3x2oif2ot2"]
+
+[ext_resource type="Theme" uid="uid://cjvsr7oimh8ti" path="res://assets/theme/main.tres" id="1_il708"]
+[ext_resource type="Script" uid="uid://do8aqs0ulqmhp" path="res://scenes/spiked_ball/new_game.gd" id="2_ru0w2"]
+[ext_resource type="Script" uid="uid://dr5c86i6l3d4t" path="res://scenes/spiked_ball/quit_button.gd" id="3_pr5r1"]
+
+[node name="Help" type="Node2D"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+offset_left = 397.0
+offset_top = 10.0
+offset_right = 892.0
+offset_bottom = 707.0
+theme = ExtResource("1_il708")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+modulate = Color(0.533333, 0.756863, 0.298039, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+
+[node name="TitleLabel2" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Keyboard
+・A & D: Move
+・Space: Jump
+・Space Again: Double Jump
+・Shitf: Dash
+GamePad
+・← →: Move
+・A: Jump
+・A Again: Double Jump
+・B: Dash"
+horizontal_alignment = 1
+
+[node name="NewGame" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "New Game"
+script = ExtResource("2_ru0w2")
+
+[node name="back" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+script = ExtResource("3_pr5r1")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/NewGame" to="PanelContainer/VBoxContainer/back" method="_on_new_game_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/back" to="PanelContainer/VBoxContainer/back" method="_on_pressed"]

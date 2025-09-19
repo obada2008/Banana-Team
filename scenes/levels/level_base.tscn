@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccpo18g7l7qgu"]
+
+[ext_resource type="Script" uid="uid://cegiunjoa3p85" path="res://scenes/levels/level.gd" id="1_rw238"]
+[ext_resource type="PackedScene" uid="uid://ccqg6f1fnaeh4" path="res://scenes/background/background.tscn" id="2_l20x4"]
+[ext_resource type="PackedScene" uid="uid://bng2p0fncgv6p" path="res://scenes/tile_map/tile_map.tscn" id="4_e3nur"]
+[ext_resource type="PackedScene" uid="uid://dhdiutdrpkctd" path="res://scenes/camera/camera.tscn" id="5_pnpou"]
+[ext_resource type="PackedScene" uid="uid://bciwry2w0etse" path="res://scenes/player/player.tscn" id="6_qey4k"]
+[ext_resource type="PackedScene" uid="uid://dipn01ii1g4gj" path="res://scenes/start/start.tscn" id="7_rth25"]
+[ext_resource type="PackedScene" uid="uid://j50hb3otk57l" path="res://scenes/goal/goal.tscn" id="8_uld8v"]
+[ext_resource type="PackedScene" uid="uid://edshpx1438ky" path="res://scenes/hud/hud.tscn" id="13_7gnd8"]
+
+[node name="LevelBase" type="Node2D"]
+script = ExtResource("1_rw238")
+
+[node name="Background" parent="." instance=ExtResource("2_l20x4")]
+
+[node name="TileMap" parent="." instance=ExtResource("4_e3nur")]
+
+[node name="Camera" parent="." instance=ExtResource("5_pnpou")]
+
+[node name="Player" parent="." instance=ExtResource("6_qey4k")]
+position = Vector2(73, -69)
+
+[node name="Start" parent="." instance=ExtResource("7_rth25")]
+position = Vector2(63, -42)
+
+[node name="Goal" parent="." instance=ExtResource("8_uld8v")]
+position = Vector2(596, -33)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Traps" type="Node" parent="."]
+
+[node name="Fruits" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("13_7gnd8")]

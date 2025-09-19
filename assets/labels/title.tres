@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://0usc8s3g8lid"]
+
+[ext_resource type="FontFile" uid="uid://cbl4eaj7j5jkr" path="res://assets/fonts/MPLUS1p-Black.ttf" id="1_2o2c5"]
+
+[resource]
+font = ExtResource("1_2o2c5")
+font_size = 100
+font_color = Color(1, 0.816667, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)

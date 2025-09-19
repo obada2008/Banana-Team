@@ -1,0 +1,7 @@
+extends Node
+
+signal on_player_hit
+signal on_level_complete
+signal on_game_complete
+signal on_score_updated
+signal on_pickup_item

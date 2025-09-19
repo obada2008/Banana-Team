@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://edshpx1438ky"]
+
+[ext_resource type="Script" uid="uid://vyb3be2ddsb7" path="res://scenes/hud/hud.gd" id="1_047rm"]
+[ext_resource type="FontFile" uid="uid://cbl4eaj7j5jkr" path="res://assets/fonts/MPLUS1p-Black.ttf" id="1_jgmq1"]
+[ext_resource type="Texture2D" uid="uid://drx85sm4iovt3" path="res://assets/Items/Fruits/Bananas.png" id="3_0bx4p"]
+[ext_resource type="Theme" uid="uid://cjvsr7oimh8ti" path="res://assets/theme/main.tres" id="4_xaqhf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wehmh"]
+font = ExtResource("1_jgmq1")
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w16kq"]
+font = ExtResource("1_jgmq1")
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5hqe"]
+atlas = ExtResource("3_0bx4p")
+region = Rect2(0, 0, 32, 32)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_047rm")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level 1"
+label_settings = SubResource("LabelSettings_wehmh")
+
+[node name="TimerLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_w16kq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "99"
+label_settings = SubResource("LabelSettings_w16kq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/ItemLabel"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = -8.0
+offset_right = 333.0
+offset_bottom = 24.0
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_g5hqe")
+stretch_mode = 5
+
+[node name="Background" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="GameComplete" type="CenterContainer" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 2.0
+offset_right = -5.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/GameComplete"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_xaqhf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/GameComplete/PanelContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Background/GameComplete/PanelContainer/VBoxContainer"]
+modulate = Color(0.533333, 0.756863, 0.298039, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Congraturations!"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Background/GameComplete/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Total Fruits: 99999"
+horizontal_alignment = 1
+
+[node name="BestScoreLabel" type="Label" parent="Background/GameComplete/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Best Score: 99999"
+horizontal_alignment = 1
+
+[node name="MainButton" type="Button" parent="Background/GameComplete/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main"
+
+[node name="QuitButton" type="Button" parent="Background/GameComplete/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Background/GameComplete/PanelContainer/VBoxContainer/MainButton" to="." method="_on_main_button_pressed"]
+[connection signal="pressed" from="Background/GameComplete/PanelContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
